@@ -1,0 +1,61 @@
+# Redrob Hackathon — Submission Metadata Template
+#
+# Copy this file to your repo root as `submission_metadata.yaml` and fill it in.
+# The fields here should match what you submit via the portal at upload time.
+# Stage 3 review uses this file to verify your portal metadata.
+
+# ============================================================================
+# Team identity
+# ============================================================================
+# Redrob Hackathon — Submission Metadata
+team_name: "TECH_SHIV"
+
+primary_contact:
+  name: "Shivkumar Diwan"
+  email: "lionshivkumardiwan@gmail.com"
+  phone: "+91-8919075006"
+
+team_members:
+  - name: "Shivkumar Diwan"
+    email: "lionshivkumardiwan@gmail.com"
+    role: "AI Engineer"
+
+github_repo: "https://github.com/YOUR_USERNAME/YOUR_REPO"   # <-- change to your actual repo URL
+
+sandbox_link: "https://colab.research.google.com/drive/13lU6Cmvu6lvDrJxhw1PjJ_8h6sWQTqQb?usp=sharing"
+
+reproduce_command: "python precompute.py && python rank.py"
+
+compute:
+  platform: "ASUS TUF Gaming A15 (AMD Ryzen 5 4600H)"
+  cpu_cores: 6
+  ram_gb: 8
+  python_version: "3.12.9"   # adjust if different
+  os: "Windows 11"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: true
+  pre_computation_time_minutes: 3
+
+ai_tools_used:
+  - "Claude"
+  - "GitHub Copilot"
+
+ai_usage_summary: |
+  Used Claude for code review and architectural discussions. Used GitHub Copilot for autocomplete and refactoring.
+  No candidate data was sent to any LLM. The ranking logic runs purely on CPU with precomputed features.
+
+methodology_summary: |
+  Hybrid ranker with four components:
+  - Career score: product vs consulting, ranking system keywords, strict rejection of consulting-heavy profiles.
+  - Behavioral score: recency, recruiter response rate, interview completion, open to work, saved by recruiters, notice period.
+  - Location score: Pune/Noida, Tier‑1 cities, willingness to relocate.
+  - Honeypot detection: expert skills with zero years, impossible timelines, zero recruiter interaction, senior title with <2 years experience.
+  Precomputed features once (3 min), ranking step under 1 second. No hardcoding, no external API calls.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true

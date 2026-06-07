@@ -1,0 +1,11 @@
+# Generated
+features.csv
+*.csv
+create_sample.py
+
+# Data
+data/
+
+# Python
+__pycache__/
+*.pyc
